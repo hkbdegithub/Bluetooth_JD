@@ -1,0 +1,39 @@
+﻿<Window x:Class="Bluetooth2._0Demo.AddInfo"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Bluetooth2._0Demo"
+        xmlns:sj="clr-namespace:WPF.DazzleUI2.Controls;assembly=WPF.DazzleUI2" 
+        mc:Ignorable="d"
+        Title="AddInfo" Height="310" Width="220" AllowsTransparency="True" WindowStyle="None"
+        MouseLeftButtonDown="Grid_MouseLeftButtonDown">
+    <Grid>
+        <ListBox x:Name="ListBoxShow" HorizontalAlignment="Left" Height="290" VerticalAlignment="Top" Width="220" ScrollViewer.HorizontalScrollBarVisibility="Disabled" SelectionChanged="ListBoxShow_SelectionChanged" Margin="0,0,0,0">
+            <ListBox.ItemTemplate>
+                <DataTemplate >
+                    <StackPanel Orientation="Vertical" Margin="5" >
+                        <TextBlock Text="{Binding Path=Name}" HorizontalAlignment="Center"/>
+                        <TextBlock Text="{Binding Path=Mac}" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+        </ListBox>
+
+        <sj:DazzleButton HorizontalAlignment="Right" VerticalAlignment="Top" Width="22" Height="22" Click="BT_close">
+            <sj:DazzleButton.MyMoverBrush>
+                <ImageBrush ImageSource="Image/Icon/xm.png"/>
+            </sj:DazzleButton.MyMoverBrush>
+            <sj:DazzleButton.MyEnterBrush>
+                <ImageBrush ImageSource="Image/Icon/xe.png"/>
+            </sj:DazzleButton.MyEnterBrush>
+            <sj:DazzleButton.Background>
+                <ImageBrush ImageSource="Image/Icon/hxn.png"/>
+            </sj:DazzleButton.Background>
+        </sj:DazzleButton>
+
+        <Label x:Name="label" Content="初始化中..." Width="100" Margin="69,128,51,134"/>
+        <Button x:Name="button" Content="迁出" HorizontalAlignment="Left" Margin="0,290,0,0" VerticalAlignment="Top" Width="220" Height="20" Click="Button_OnClick"/>
+    </Grid>
+</Window>
